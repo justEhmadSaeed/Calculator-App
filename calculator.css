@@ -4,6 +4,10 @@
 body {
 	background-color: #8650ee;
 }
+.heading{
+	text-align: center;
+	color: white;
+}
 #calculator-body {
 	max-width: 500px;
 	margin: auto;
@@ -12,6 +16,7 @@ body {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
 	background-color: skyblue;
+	border: 5px solid #ACBE85;
 }
 .btn {
 	text-align: center;
@@ -22,12 +27,14 @@ body {
 	color: #484848;
 	font-weight: 700;
 	font-size: 20px;
+	cursor: pointer;
+	user-select: none;
 }
 .btn:hover {
 	background-color: teal;
 	color: white;
 }
-.screen {
+#screen {
 	grid-column-start: 1;
 	grid-column-end: 5;
 	text-align: right;
@@ -42,8 +49,10 @@ body {
 	border-bottom: 4px solid #8da9bc;
 	font-size: 25px;
 }
-.input {
+#input-screen {
 	text-align: left;
+}
+#output-screen {
 }
 .operators {
 	background-color: khaki;
