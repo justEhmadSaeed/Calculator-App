@@ -4,7 +4,7 @@
 body {
 	background-color: #8650ee;
 }
-.heading{
+.heading {
 	text-align: center;
 	color: white;
 }
@@ -16,7 +16,7 @@ body {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
 	background-color: skyblue;
-	border: 5px solid #ACBE85;
+	border: 5px solid #acbe85;
 }
 .btn {
 	text-align: center;
@@ -51,8 +51,11 @@ body {
 }
 #input-screen {
 	text-align: left;
+	overflow-x: scroll;
 }
-
+::-webkit-scrollbar {
+	width: 0px;
+}
 .operators {
 	background-color: khaki;
 }
