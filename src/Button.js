@@ -1,22 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Button = ({ text, onClickHandler }) => {
 	const operators = ['+', '-', '*', '/', '='];
 
 	return (
-		<div
+		<button
 			onClick={() => onClickHandler(text)}
 			className={`btn  ${
 				text === 'C'
 					? 'clear'
 					: operators.includes(text)
-					? 'operators'
-					: ''
+						? 'operators'
+						: ''
 			}
                 `}
 		>
 			{text}
-		</div>
+		</button>
 	);
+};
+Button.propTypes = {
+	text: PropTypes.string,
+	onClickHandler: PropTypes.func.isRequired
 };
 export default Button;
