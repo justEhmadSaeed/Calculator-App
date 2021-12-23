@@ -1,10 +1,18 @@
+import {
+	expressionUpdate,
+	historyUpdate,
+	resultUpdate
+} from 'actions';
 import Button from 'Button';
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Calculator = () => {
-	const [expression, setExpression] = useState('');
-	const [results, setResults] = useState('');
+	const expression = useSelector((state) => state.expression);
+	const results = useSelector((state) => state.results);
+	const dispatch = useDispatch();
 
 	const characters = [
 		'1',
@@ -26,15 +34,23 @@ const Calculator = () => {
 	];
 	const onClickHandler = (input) => {
 		if (input === 'C') {
-			setExpression('');
-			setResults('');
+			dispatch(expressionUpdate(''));
+			dispatch(resultUpdate(''));
 		} else if (input === '=') {
-			try {
-				setResults(eval(expression));
-			} catch (error) {
-				alert(error);
-			}
-		} else setExpression(expression + input);
+			if (expression.length > 0)
+				try {
+					const expResult = eval(expression).toString();
+					dispatch(resultUpdate(expResult));
+					dispatch(
+						historyUpdate({
+							expression,
+							results: expResult
+						})
+					);
+				} catch (error) {
+					alert(error);
+				}
+		} else dispatch(expressionUpdate(expression + input));
 	};
 
 	return (
