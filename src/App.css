@@ -4,6 +4,34 @@
 body {
 	background-color: #8650ee;
 }
+#landing-page {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.links-block {
+	margin-top: 30px;
+}
+.recent-page {
+	padding: 10px;
+}
+.links-block a {
+	text-decoration: none;
+	color: white;
+	background-color: #efc200;
+	border: 2px solid #484848;
+	padding: 10px 30px;
+}
+.links-block a:hover {
+	background-color: #8650ee;
+}
+.calculator-app {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
 .heading {
 	text-align: center;
 	color: white;
@@ -18,11 +46,17 @@ body {
 	background-color: skyblue;
 	border: 5px solid #acbe85;
 }
+.back-btn {
+	width: 50px;
+}
+.link {
+	color: white;
+	margin: 10px 0px 0px 20px;
+}
 .btn {
 	text-align: center;
 	padding: 1.5rem;
-	margin: 1rem;
-	/* border-bottom: 4px solid #8da9bc; */
+	margin: 0.5rem;
 	background-color: #eff0ef;
 	color: #484848;
 	font-weight: 700;

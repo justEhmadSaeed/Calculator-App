@@ -5,12 +5,22 @@
 		"plugin:react/recommended",
 		"plugin:jsx-a11y/recommended"
 	],
-	"plugins": ["react", "import", "jsx-a11y"],
+	"plugins": [
+		"react",
+		"import",
+		"jsx-a11y"
+	],
 	"rules": {
 		"react/prop-types": 1,
-		"indent": ["warn", "tab"],
-		"linebreak-style": ["warn", "windows"],
-		"quotes": ["warn", "single"],
+		"indent": "off",
+		"linebreak-style": [
+			"warn",
+			"windows"
+		],
+		"quotes": [
+			"warn",
+			"single"
+		],
 		"no-unused-vars": "warn"
 	},
 	"parserOptions": {
@@ -31,7 +41,9 @@
 		},
 		"import/resolver": {
 			"node": {
-				"paths": ["src"]
+				"paths": [
+					"src"
+				]
 			}
 		}
 	}

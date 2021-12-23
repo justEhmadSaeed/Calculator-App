@@ -11,8 +11,8 @@ const Button = ({ text, onClickHandler }) => {
 				text === 'C'
 					? 'clear'
 					: operators.includes(text)
-						? 'operators'
-						: ''
+					? 'operators'
+					: ''
 			}
                 `}
 		>
@@ -23,5 +23,8 @@ const Button = ({ text, onClickHandler }) => {
 Button.propTypes = {
 	text: PropTypes.string,
 	onClickHandler: PropTypes.func.isRequired
+};
+Button.defaultProps = {
+	text: ''
 };
 export default Button;

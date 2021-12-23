@@ -1,60 +1,23 @@
-import './App.css';
-import Button from './Button.js';
-import React, { useState } from 'react';
-
+import 'App.css';
+import React from 'react';
+import Calculator from 'pages/Calculator';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route
+} from 'react-router-dom';
+import LandingPage from 'pages/LandingPage';
+import Recent from 'pages/Recent';
 const App = () => {
-	const [expression, setExpression] = useState('');
-	const [results, setResults] = useState('');
-
-	const characters = [
-		1,
-		2,
-		3,
-		'+',
-		4,
-		5,
-		6,
-		'-',
-		7,
-		8,
-		9,
-		'*',
-		'C',
-		0,
-		'=',
-		'/',
-	];
-	const onClickHandler = (input) => {
-		if (input === 'C') {
-			setExpression('');
-			setResults('');
-		} else if (input === '=') {
-			try {
-				setResults(eval(expression));
-			} catch (error) {
-				alert(error);
-			}
-		} else setExpression(expression + input);
-	};
-
 	return (
-		<div>
-			<h1 className='heading'>Calculator</h1>
-			<div id='calculator-body'>
-				<div id='screen'>
-					<div id='input-screen'>{expression}</div>
-					<div id='output-screen'>{results}</div>
-				</div>
-				{characters.map((char, i) => (
-					<Button
-						text={char}
-						key={i}
-						onClickHandler={onClickHandler}
-					/>
-				))}
-			</div>
-		</div>
+		<Router>
+			<Routes>
+				<Route path="/calculator" element={<Calculator />} />
+				<Route path="/recent" element={<Recent />} />
+				{/* Default Route */}
+				<Route path="/*" element={<LandingPage />} />
+			</Routes>
+		</Router>
 	);
 };
-
 export default App;
