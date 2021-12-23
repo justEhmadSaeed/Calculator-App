@@ -96,3 +96,21 @@ body {
 .clear {
 	background-color: burlywood;
 }
+.recent-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.recent-box {
+	width: 350px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px;
+	margin-top: 10px;
+	box-shadow: 1px 1px 5px;
+}
+
+.recent-result {
+	font-weight: 900;
+	text-align: right;
+}
